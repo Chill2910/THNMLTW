@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza House | Tinh hoa Pizza thủ công</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Sử dụng Font Awesome để lấy các icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-pizza-slice"></i> PIZZA<span>HOUSE</span>
+                </a>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#menu">Thực đơn</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="baitap.html" class="highlight-link">Bài Tập</a></li>
+            </ul>
+
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content container">
+                <h1>Thưởng Thức Pizza <br> Đích Thực</h1>
+                <p>Bánh được làm thủ công, nướng lò gạch truyền thống mang hương vị Ý vẹn nguyên.</p>
+                <div class="hero-btns">
+                    <a href="#menu" class="btn btn-primary">Xem Thực Đơn</a>
+                    <a href="#contact" class="btn btn-secondary">Đặt Bàn Ngay</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="assets/images/photo-1555396273-367ea4eb4db5.avif" alt="Quy trình làm bánh">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">Về Pizza House</h2>
+                    <p>Tại Pizza House, chúng tôi tin rằng một chiếc pizza ngon bắt đầu từ sự tận tâm. Bột bánh được ủ 24h, sốt cà chua tươi và phô mai Mozzarella thượng hạng.</p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Nguyên liệu sạch</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Nướng củi truyền thống</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="menu" class="menu section">
+            <div class="container">
+                <h2 class="section-title center">Thực Đơn Đặc Sắc</h2>
+                
+                <div class="menu-filters">
+                    <button class="filter-btn active" data-filter="all">Tất cả</button>
+                    <button class="filter-btn" data-filter="pizza">Pizza</button>
+                    <button class="filter-btn" data-filter="pasta">Mỳ Ý</button>
+                    <button class="filter-btn" data-filter="drink">Đồ uống</button>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-card" data-category="pizza">
+                        <div class="card-img">
+                            <img src="assets/images/pizza-hai-san.jpg" alt="Pizza hải sản">
+                            <span class="tag">Bán chạy</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Pizza Hải Sản</h3>
+                            <p>Tôm, mực, thanh cua kết hợp cùng sốt Pesto xanh mát.</p>
+                            <div class="card-footer">
+                                <span class="price">189.000đ</span>
+                                <button class="btn-order" onclick="addToCart('Pizza Hải Sản')">Đặt món</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="pizza">
+                        <div class="card-img">
+                            <img src="assets/images/pizza-thap-cam.jpg" alt="Pizza thập cẩm">
+                        </div>
+                        <div class="card-info">
+                            <h3>Pizza Thập Cẩm</h3>
+                            <p>Xúc xích Ý, thịt xông khói, hành tây và ớt chuông.</p>
+                            <div class="card-footer">
+                                <span class="price">165.000đ</span>
+                                <button class="btn-order" onclick="addToCart('Pizza Thập Cẩm')">Đặt món</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="pasta">
+                        <div class="card-img">
+                            <img src="assets/images/my-y-bo-bam.jpg" alt="Mỳ Ý">
+                        </div>
+                        <div class="card-info">
+                            <h3>Mỳ Ý Bò Bằm</h3>
+                            <p>Sợi mỳ dai ngon hòa quyện sốt bò bằm cà chua truyền thống.</p>
+                            <div class="card-footer">
+                                <span class="price">120.000đ</span>
+                                <button class="btn-order" onclick="addToCart('Mỳ Ý Bò Bằm')">Đặt món</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="drink">
+                        <div class="card-img">
+                            <img src="assets/images/do-uong.jpg" alt="Đồ uống">
+                        </div>
+                        <div class="card-info">
+                            <h3>Nước Ép Trái Cây</h3>
+                            <p>Nước ép tươi trong ngày (Cam/Dưa hấu/Dứa).</p>
+                            <div class="card-footer">
+                                <span class="price">45.000đ</span>
+                                <button class="btn-order" onclick="addToCart('Nước ép')">Đặt món</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section container">
+            <h2 class="section-title center">Liên Hệ & Đặt Bàn</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <form id="pizzaContactForm">
+                        <input type="text" id="name" placeholder="Họ và tên" required>
+                        <input type="email" id="email" placeholder="Email của bạn" required>
+                        <select id="service">
+                            <option value="book">Đặt bàn</option>
+                            <option value="feedback">Góp ý</option>
+                        </select>
+                        <textarea id="message" rows="5" placeholder="Bạn muốn nói gì với chúng tôi?"></textarea>
+                        <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Địa chỉ</h3>
+                        <p>456 Đường Pizza, Quận Cam, TP. Hồ Chí Minh</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-phone"></i>
+                        <h3>Điện thoại</h3>
+                        <p>1900 1234 - 090 888 999</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-clock"></i>
+                        <h3>Giờ mở cửa</h3>
+                        <p>09:00 AM - 10:30 PM (Hàng ngày)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h2>PIZZA<span>HOUSE</span></h2>
+                <p>Hương vị truyền thống - Trải nghiệm hiện đại.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p class="copyright">&copy; 2023 [Tên Sinh Viên] - MSSV: [12345678]. Đồ án Lập trình Web cơ bản.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab08 - JSON</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            width: 700px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #128812;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .content-box {
+            background-color: #90ee90;
+            min-height: 45px;
+            padding: 15px 20px;
+            font-size: 22px;
+            box-sizing: border-box;
+        }
+
+        .content-box p {
+            margin: 5px 0;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #btnShow {
+            background-color: #128812;
+        }
+
+        #btnHide {
+            background-color: #f08080;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="header">THÔNG TIN USER</h1>
+        <div id="userInfo" class="content-box">
+            </div>
+    </div>
+
+    <div class="buttons">
+        <button id="btnShow">Hiện thông tin</button>
+        <button id="btnHide">Chưa Ẩn</button>
+    </div>
+
+    <script>
+         var userData = {
+            "name": "Huỳnh Thế Quang ",
+            "birthYear": "2004",
+            "email": "DH52201301@gmail.com",
+            "address": "73 Phạm Thị Tánh, Phường 7, Quận 8, TP.HCM"
+        };
+
+         var userInfoElement = document.getElementById('userInfo');
+        var btnShow = document.getElementById('btnShow');
+        var btnHide = document.getElementById('btnHide');
+
+         userInfoElement.innerHTML = '';
+
+         btnShow.addEventListener('click', function() {
+            userInfoElement.innerHTML = `
+                <p>Họ và tên: ${userData.name}</p>
+                <p>Năm sinh: ${userData.birthYear}</p>
+                <p>Email: ${userData.email}</p>
+                <p>Địa chỉ: ${userData.address}</p>
+            `;
+           
+            btnHide.innerText = "Ẩn thông tin"; 
+        });
+
+         btnHide.addEventListener('click', function() {
+            userInfoElement.innerHTML = '';  
+            btnHide.innerText = "Chưa Ẩn";   
+        });
+    </script>
+</body>
+</html>
